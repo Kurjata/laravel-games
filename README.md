@@ -1,6 +1,6 @@
 # Lista de Jogos com Laravel & Bootstrap
 
-![Banner do Projeto](link-para-imagem-do-banner.png) <!-- Substitua 'link-para-imagem-do-banner.png' por um link para um banner visual do projeto, se desejar. -->
+![Banner do Projeto](https://olhardigital.com.br/wp-content/uploads/2023/05/Games-Brasil-e1686075484409.jpg) <!-- Substitua 'link-para-imagem-do-banner.png' por um link para um banner visual do projeto, se desejar. -->
 
 Este projeto foi criado para demonstrar boas práticas no desenvolvimento com Laravel, integrando uma lista de jogos diretamente a um banco de dados MySQL, e com uma interface elegante construída com Bootstrap.
 
