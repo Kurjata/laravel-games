@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Jogo;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class JogosController extends Controller
 {
     public function index()
     {
-        $jogos = Jogo::all();
-        //dd($jogos);
-        return view('jogos.index', ['jogos'=>$jogos]);
+        $jogos = [];
+        return view('jogos.index',['jogos'=>$jogos]);
     }
     public function create()
     {
@@ -51,4 +51,11 @@ class JogosController extends Controller
         Jogo::where('id', $id)->delete();
         return redirect()->route('jogos-index');
     }
+
+    public function fetch(Request $request, Response $response)
+    {
+        $jogos = Jogo::all();
+        return response()->json($jogos);
+    }
+    
 }
