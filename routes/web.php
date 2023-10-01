@@ -14,25 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/home', function () {
-//    return view('welcome');
-// });
-
-//Route::view('/jogos', 'jogos');
-
-
-
-//Route::view('/jogos', 'jogos',['name'=>'StarWars Force Unleash I']); parametro estático
-
-//Route::get('/jogos/{id?}/{name?}', function($id = null, $name = null){
-//    return view('jogos', [ 'idJogo' =>$id, 'nomeJogo' =>$name]); //parametro dinâmico
-// }) ->where(['id'=>'[0-9]+', 'name'=>'[a-z]+']);
-
-Route::get('/jogos', [JogosController::class, 'index']);
-
-Route::get('/home', function(){
-    return view('welcome');
-})->name('home-index');
+Route::prefix('jogos')->group(function(){
+    Route::get('/', [JogosController::class, 'index'])->name('jogos-index');
+    Route::get('/create', [JogosController::class, 'create'])->name('jogos-create');
+    Route::post('/', [JogosController::class, 'store'])->name('jogos-store');
+});
 
 Route::fallback(function(){
     return view('erro ao localizar a rota');
