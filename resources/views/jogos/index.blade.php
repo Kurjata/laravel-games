@@ -4,6 +4,11 @@
 
 @section('content')
     <div class="container mt-5">
+
+    <div class="neon-clock">
+        <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+    </div>
+
         <div class="row">
             <div class="col-sm-10">
                 <h1>Lista de Jogos</h1>

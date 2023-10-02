@@ -1,16 +1,16 @@
 
 
-async function fetchData(){
+async function fetchData() {
     const request = await fetch('http://127.0.0.1:8000/jogos/fetch')
     const data = await request.json()
     return data
 }
 
 fetchData()
-    .then(data=>{
+    .then(data => {
         const table = document.querySelector('#body')
-        data?.map(itens=>{
-        const html = `
+        data?.map(itens => {
+            const html = `
                 <tr>
                     <th>${itens.id}</th>
                     <th>${itens.nome}</th>
@@ -30,6 +30,23 @@ fetchData()
                     </th>
                 </tr>
         `
-        table.innerHTML+=html
+            table.innerHTML += html
+        })
     })
-    })
+
+document.addEventListener("DOMContentLoaded", function () {
+    function updateNeonClock() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+
+        document.getElementById('hours').innerText = hours;
+        document.getElementById('minutes').innerText = minutes;
+        document.getElementById('seconds').innerText = seconds;
+    }
+
+
+    updateNeonClock();
+    setInterval(updateNeonClock, 1000);
+});
